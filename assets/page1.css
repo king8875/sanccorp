@@ -1,0 +1,266 @@
+main {
+    flex: 1;
+}
+
+.inner {
+    padding: 5vw;
+}
+
+/* 전체 영역 */
+.ask--section {
+    padding-top: 50px;
+}
+
+.law-consult-wrap {
+    max-width: 1440px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* 상단 버튼 */
+.law-top-btns {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.law-top-btn {
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    background: #f8f8f8;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.law-top-btn.active {
+    background: #333;
+    color: #fff;
+    border-color: #333;
+}
+
+/* 하위 버튼 */
+.law-sub-btns .sub-group {
+    display: none;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.law-sub-btns .sub-group.active {
+    display: flex;
+}
+
+.law-sub-btns .sub-group button {
+    padding: 10px 16px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.law-sub-btns .sub-group button:hover {
+    background: #333;
+    color: #fff;
+}
+
+
+/* 상담 신청 폼 */
+.law-form-wrap {
+    visibility: hidden;
+    opacity: 0;
+    transition: all .4s ease;
+    text-align: left;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 8px;
+    background: #fafafa;
+}
+
+.law-form-wrap.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.selected-category {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* 첨부파일 */
+.file-upload input[type="file"] {
+    display: block;
+    margin-top: 5px;
+}
+
+.file-info {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #666;
+}
+
+.file-preview {
+    margin-top: 10px;
+    max-height: 150px;
+    overflow: hidden;
+}
+
+.file-preview img {
+    max-width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    display: block;
+}
+
+.required {
+    color: red;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.form-check input {
+    margin-right: 8px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: #333;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #555;
+}
+
+.ask_tit {
+    padding: 20px 0;
+    border-bottom: 5px solid #222;
+    margin-bottom: 20px;
+}
+
+.ask_stit {
+    padding: 10px 0;
+}
+
+.ask_p {
+    margin-bottom: 50px;
+}
+
+/* ===== Custom Alert Modal ===== */
+.custom-alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 9999;
+}
+
+.custom-alert.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.custom-alert-content {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 12px;
+    max-width: 320px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 0.3s ease;
+}
+
+.custom-alert-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.custom-alert-message {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.custom-alert-btn {
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.custom-alert-btn:hover {
+    background: #555;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의 페이지</title>
+    <link rel="stylesheet" href="/assets/reset.css">
+    <link rel="stylesheet" href="/assets/page1.css">
+    <link rel="stylesheet" href="/assets/layout.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
+    <!-- <script src="/main.js"></script> -->
+</head>
+
+<body>
+    <header class="header">
+        <div class="header_inner">header</div>
+    </header>
+    <main>
+        <div class="wrapper">
+            <section class="ask--section">
+                <div class="inner">
+
+                    <h3 class="ask_tit">문의사항</h3>
+                    <h4 class="ask_stit">궁금하신 사항을 남겨주세요.</h4>
+                    <p class="ask_p">광고성 글이나 불법게시물(상업물, 음란물, 욕설) 등 본 사이트와 무관한 문의에 대한 질문은 답변이 되지 않을 수 있습니다.</p>
+                    <div class="law-consult-wrap">
+                        <!-- 상위 카테고리 -->
+                        <div class="law-top-btns">
+                            <button class="law-top-btn" data-type="criminal">형사</button>
+                            <button class="law-top-btn" data-type="civil">민사</button>
+                            <button class="law-top-btn" data-type="family">가사</button>
+                        </div>
+
+                        <!-- 하위 카테고리 -->
+                        <div class="law-sub-btns">
+                            <!-- 형사 -->
+                            <div class="sub-group" data-type="criminal">
+                                <button class="law-sub-btn" data-sub="traffic">교통사고</button>
+                                <button class="law-sub-btn" data-sub="violent">강력범죄</button>
+                                <button class="law-sub-btn" data-sub="complaint">고소대리 및 피해자 변호</button>
+                                <button class="law-sub-btn" data-sub="etc">기타</button>
+                            </div>
+
+                            <!-- 민사 -->
+                            <div class="sub-group" data-type="civil">
+                                <button class="law-sub-btn" data-sub="contract">계약분쟁</button>
+                                <button class="law-sub-btn" data-sub="compensation">손해배상 및 구상소송</button>
+                                <button class="law-sub-btn" data-sub="realestate">부동산</button>
+                                <button class="law-sub-btn" data-sub="etc">기타</button>
+                            </div>
+                            <!-- 가사 -->
+                            <div class="sub-group" data-type="family">
+                                <button class="law-sub-btn" data-sub="divorce">이혼, 재산분할, 양육권, 위자료</button>
+                                <button class="law-sub-btn" data-sub="inheritance">상속, 한정승인, 유류분</button>
+                                <button class="law-sub-btn" data-sub="etc">기타</button>
+                            </div>
+                        </div>
+
+
+                        <!-- 개인정보 입력 폼 -->
+                        <div class="law-form-wrap">
+                            <form id="lawConsultForm">
+                                <h3 class="form-title">상담 신청서</h3>
+                                <p class="selected-category">
+                                    선택 분야: <span id="selectedField">없음</span> /
+                                    세부 항목: <span id="selectedSubField">없음</span>
+                                </p>
+
+                                <div class="flex-box">
+                                    <div class="form-group">
+                                        <label for="name">이름 <span class="required">*</span></label>
+                                        <input type="text" id="name" name="name" required placeholder="이름을 입력하세요">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">연락처 <span class="required">*</span></label>
+                                        <input type="tel" id="phone" name="phone" required placeholder="010-0000-0000">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="email">이메일 (선택)</label>
+                                    <input type="email" id="email" name="email" placeholder="example@email.com">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="title">제목</label>
+                                    <textarea id="message" name="message" rows="1"
+                                        placeholder="상담 제목을 입력해주세요"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">상담 내용</label>
+                                    <textarea id="message" name="message" rows="5"
+                                        placeholder="상담 내용을 입력해주세요"></textarea>
+                                </div>
+                                <!-- 첨부파일 -->
+                                <div class="form-group file-upload">
+                                    <label for="attachment">첨부 파일 (선택) <small>PDF, JPG, PNG 가능</small></label>
+                                    <input type="file" id="attachment" name="attachment" accept=".pdf,.jpg,.jpeg,.png">
+                                    <div id="fileInfo" class="file-info">선택된 파일이 없습니다.</div>
+                                    <div id="filePreview" class="file-preview"></div>
+                                </div>
+
+                                <div class="form-check">
+                                    <input type="checkbox" id="privacy" required>
+                                    <label for="privacy">개인정보 수집 및 이용에 동의합니다. <span class="required">*</span></label>
+                                </div>
+
+                                <button type="submit" class="submit-btn">문의하기</button>
+                            </form>
+                            <!-- 커스텀 알림 모달 -->
+                            <div id="customAlert" class="custom-alert">
+                                <div class="custom-alert-content">
+                                    <h3 class="custom-alert-title">상담 신청 완료</h3>
+                                    <p class="custom-alert-message">상담 신청이 정상적으로 접수되었습니다.<br>빠른 시일 내에 연락드리겠습니다.</p>
+                                    <button id="customAlertBtn" class="custom-alert-btn">확인</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">footer</footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const topButtons = document.querySelectorAll('.law-top-btn');
+            const subGroups = document.querySelectorAll('.law-sub-btns .sub-group');
+            const subButtons = document.querySelectorAll('.law-sub-btn');
+
+            const formWrap = document.querySelector('.law-form-wrap');
+            const selectedField = document.getElementById('selectedField');
+            const selectedSubField = document.getElementById('selectedSubField');
+
+            const fileInput = document.getElementById('attachment');
+            const fileInfo = document.getElementById('fileInfo');
+            const filePreview = document.getElementById('filePreview');
+
+            // 상위 버튼 클릭
+            topButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const type = button.dataset.type;
+
+                    // 상단 버튼 active 초기화
+                    topButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    // 하위 버튼 그룹 초기화
+                    subGroups.forEach(group => group.classList.remove('active'));
+                    document.querySelector(`.sub-group[data-type="${type}"]`).classList.add('active');
+
+                    // 선택된 분야 표시
+                    selectedField.textContent = button.textContent;
+                    selectedSubField.textContent = "없음";
+
+                    // 폼 숨기기
+                    formWrap.classList.remove('active');
+                });
+            });
+
+            // 하위 버튼 클릭
+            subButtons.forEach(subBtn => {
+                subBtn.addEventListener('click', () => {
+                    selectedSubField.textContent = subBtn.textContent;
+
+                    // 폼 표시
+                    formWrap.classList.add('active');
+
+                    // 스크롤 이동
+                    formWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            // 첨부파일 선택 시 미리보기 및 파일 이름 표시
+            fileInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                filePreview.innerHTML = ""; // 초기화
+
+                if (file) {
+                    fileInfo.textContent = `선택된 파일: ${file.name}`;
+
+                    const fileType = file.type;
+                    if (fileType.startsWith('image/')) {
+                        const reader = new FileReader();
+                        reader.onload = function (event) {
+                            const img = document.createElement('img');
+                            img.src = event.target.result;
+                            filePreview.appendChild(img);
+                        };
+                        reader.readAsDataURL(file);
+                    } else if (fileType === 'application/pdf') {
+                        filePreview.innerHTML = `<p>📄 PDF 파일 첨부됨</p>`;
+                    } else {
+                        filePreview.innerHTML = `<p>이 파일은 미리보기를 지원하지 않습니다.</p>`;
+                    }
+                } else {
+                    fileInfo.textContent = "선택된 파일이 없습니다.";
+                }
+            });
+
+            // 기본으로 '형사' 카테고리 활성화
+            document.querySelector('.law-top-btn[data-type="criminal"]').click();
+
+            // 기존 submit 이벤트 수정
+            document.getElementById('lawConsultForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const name = this.querySelector('[name="name"]').value.trim();
+                const phone = this.querySelector('[name="phone"]').value.trim();
+
+                if (!name) {
+                    showCustomAlert("이름을 입력해주세요."); // 필요 시 커스터마이징 가능
+                    return;
+                }
+                if (!phone || !/^\d{2,3}-?\d{3,4}-?\d{4}$/.test(phone)) {
+                    showCustomAlert("올바른 전화번호를 입력해주세요.");
+                    return;
+                }
+
+                // 기존 alert 대신 커스텀 알림
+                showCustomAlert();
+
+                this.reset();
+                document.getElementById('fileInfo').textContent = "선택된 파일이 없습니다.";
+                document.getElementById('filePreview').innerHTML = "";
+
+                document.querySelector('.law-form-wrap').classList.remove('active');
+                document.getElementById('selectedSubField').textContent = "없음";
+            });
+
+            // 커스텀 알림 열기
+            function showCustomAlert() {
+                const alertBox = document.getElementById('customAlert');
+                alertBox.classList.add('active');
+
+                const confirmBtn = document.getElementById('customAlertBtn');
+                confirmBtn.addEventListener('click', () => {
+                    alertBox.classList.remove('active');
+
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/scrollSmoother.css">
+    <!-- <link rel="stylesheet" href="/assets/layout.css"> -->
+    <!-- <link rel="stylesheet" href="/assets/reset.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- swiper link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- swiper script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+
+</head>
+
+<body>
+
+    <main class="wrapper">
+        <div id="smooth-wrapper" class="container">
+            <div id="smooth-content" class="section">
+                <section>
+                    <div class="box" data-speed="0.5">fewfewfw</div>
+                </section>
+                <section>
+                    <div class="box" data-speed="0.5">fewfewfw</div>
+                </section>
+                <section>
+                    <div class="box" data-speed="0.5">fewfewfw</div>
+                </section>
+                <section>
+                    <div class="text-container">
+                        <h2 class="split">
+                            GSAP SplitText Plugin<br>
+                            Animate each word beautifully!
+                        </h2>
+                    </div>
+                </section>
+                <section>
+                    <div class="container01">
+                        <h2 class="split01">
+                            GSAP SplitText Mask Example<br>
+                            각 라인이 마스크로 감싸져 부드럽게 등장합니다
+                        </h2>
+                    </div>
+                </section>
+                <section>
+                    <div class="box1" data-speed="0.5">fewfewfw</div>
+                </section>
+                <section>
+                    <div class="box" data-lag="0.5">fewfewfw</div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <script>
+
+
+
+
+        // create the smooth scroller FIRST!
+        gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+        gsap.registerPlugin(SplitText);
+
+
+
+        const split = SplitText.create(".split", {
+            type: "lines, words",
+            mask: "lines",
+            autoSplit: true
+        });
+
+        gsap.from(split.words, {
+            scrollTrigger: {
+                trigger: ".split",
+                start: "top 80%",
+                toggleActions: "play none none none",
+                markers: true
+
+            },
+            duration: 1,
+            y: 100,
+            autoAlpha: 0,
+            stagger: 0.05,
+            ease: "power3.out",
+        });
+
+
+        // SplitText 실행
+        const split1 = SplitText.create(".split01", {
+            type: "words",
+            mask: "words", // 각 라인을 마스크로 감싸줌
+            linesClass: "word++" // 라인별로 클래스 자동 부여 (line1, line2 등)
+        });
+
+        // 애니메이션
+        gsap.from(split1.masks, {
+            yPercent: 100,        // 아래에서 위로 등장
+            opacity: 0,
+            duration: 0.1,
+            stagger: 0.15,        // 라인별로 순차 등장
+            ease: "power3.out"
+        });
+        // gsap.to('.box', {
+        //     scrollTrigger: {
+        //         trigger: 'body',
+        //         start: "0% 0%",
+        //         end: "10% 100%",
+        //         scrub: 1,
+        //         markers:true
+        //     },
+        // });
+
+        // ScrollSmoother 초기화
+        ScrollSmoother.create({
+            wrapper: ".container", // 전체 래퍼
+            content: ".section", // 스크롤될 콘텐츠
+            smooth: 1.5,                // 부드러운 정도 (기본값: 1)
+            effects: true,               // parallax 효과 활성화
+            effectsPadding: 100, // 요소가 화면에 들어오기 100px 전부터 효과 시작
+            // onStop: function () {
+            //     alert("goewgwg");
+            //     console.log("ScrollSmoother가 멈췄습니다!");
+            // },
+            // onUpdate: function() {
+            //     alert("hihi");
+            //     console.log("update")
+            // }
+        });
+    </script>
+
+</body>
+
+</html>

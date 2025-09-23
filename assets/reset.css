@@ -1,0 +1,218 @@
+/* =========================================
+   Base CSS (Reset + Typography)
+   ========================================= */
+
+/* ------------------------------
+   Reset
+   ------------------------------ */
+:root{
+    /* --wp--style--global--content-size: 760rem;
+    --wp--style--global--wide-size: 1200rem;
+    --wp--preset--spacing--jt-xxxsmall: 16rem;
+    --wp--preset--spacing--jt-xxsmall: 24rem;
+    --wp--preset--spacing--jt-xsmall: 28rem;
+    --wp--preset--spacing--jt-small: 32rem;
+    --wp--preset--spacing--jt-medium: 36rem;
+    --wp--preset--spacing--jt-large: 40rem;
+    --wp--preset--spacing--jt-xlarge: 48rem;
+    --wp--preset--spacing--jt-xxlarge: 60rem;
+    --wp--preset--spacing--jt-xxxlarge: 80rem;
+    --wp--preset--font-size--jt-01: 52rem;
+    --wp--preset--font-size--jt-02: 40rem;
+    --wp--preset--font-size--jt-03: 32rem;
+    --wp--preset--font-size--jt-04: 24rem;
+    --wp--preset--font-size--jt-05: 20rem;
+    --wp--preset--font-size--jt-06: 18rem;
+    --wp--preset--font-size--jt-07: 16rem;
+    --wp--preset--font-size--jt-08: 14rem;
+    --wp--custom--jt-line-height-01: 70rem;
+    --wp--custom--jt-line-height-02: 52rem;
+    --wp--custom--jt-line-height-03: 44rem;
+    --wp--custom--jt-line-height-04: 36rem;
+    --wp--custom--jt-line-height-05: 30rem;
+    --wp--custom--jt-line-height-06: 30rem;
+    --wp--custom--jt-line-height-07: 26rem;
+    --wp--custom--jt-line-height-08: 24rem;
+    --wp--custom--jt-border-radius-01: 16rem; */
+
+
+    --color-white: #FFF;
+    --color-black: #1B1B1B;
+    --color-gray-100: #F8F8F8;
+    --color-gray-200: #F4F4F4;
+    --color-gray-300: #EEE;
+    --color-gray-400: #DDD;
+    --color-gray-500: #C5C5C5;
+    --color-gray-600: #AAA;
+    --color-gray-700: #8E8E8E;
+    --color-gray-800: #525252;
+    --color-gray-900: #333;
+    --color-primary: #652D83;
+    --color-secondary: #133937;
+    --color-tertiary: #481E14;
+    --color-quaternary: #1D2A48;
+    --color-quinary: #C83293;
+    --color-point-01: #F9F4EE;
+    --color-point-02: #E7E0D7;
+    --color-point-03: #D3CABE;
+    --color-bg: #FBFBFB;
+    --font-primary: 'SUIT', sans-serif;
+    --font-secondary: 'GoldenBook', 'SUIT', sans-serif;
+    --font-third: 'Jua', sans-serif;
+    --letter-spacing: 0em;
+    
+    --font-maintit : 6rem;
+    --font-tit : 3rem;
+    --font-tit-01 : 2rem;
+    --font-tit-02 : 1.4rem;
+    --font-subtit : 1rem;
+
+    /* mobile */
+    --font-maintit-m : 4rem;
+    --font-tit-m : 2rem;
+    --font-tit-01-m : 2rem;
+    --font-tit-02-m : 1.4rem;
+    --font-subtit-m : 1rem;
+
+
+    --separate-mb : 6px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+}
+
+
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.18);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(1.02);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+ul,
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* html {
+    font-size: clamp(14px, 2.2vw, 22px);
+} */
+
+body {
+    overflow-x: hidden;
+    font-family: var(--font-primary);
+    word-break: keep-all;
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--color-black);
+    background: var(--color-bg);
+}
+
+
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: inherit;
+}
+
+h1 {
+    font-size: clamp(2.25rem, 5vw, 3rem);
+}
+
+h2 {
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 1.875rem);
+}
+
+h4 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+}
+
+h5 {
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+}
+
+h6 {
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+}
+
+p {
+    font-size: 1rem;
+}
+
+small {
+    font-size: clamp(0.75rem, 1vw, 0.875rem);
+}
+
+strong,
+b {
+    font-weight: 700;
+}
+
+em,
+i {
+    font-style: italic;
+} */

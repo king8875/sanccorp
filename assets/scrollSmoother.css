@@ -1,0 +1,60 @@
+.wrapper {
+    width: 100%;
+    height: 100%;
+    background: #f00;
+}
+
+.container {
+
+    background: #888;
+}
+
+.section {
+    display: block;
+    height: 700vh;
+
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background: #00f;
+}
+
+
+section {
+    padding: 500px 0;
+}
+
+.text-container {
+    overflow: hidden;
+    width: 600px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.split {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+
+.container01{
+    width: 80%;
+    text-align: center;
+}
+
+.split01 {
+    font-size: 2rem;
+    line-height: 1.4;
+}
+
+.line-mask {
+    overflow: hidden;
+    /* 마스크 효과 핵심 */
+    display: block;
+}

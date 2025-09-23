@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/reset.css">
+    <link rel="stylesheet" href="/assets/layout.css">
+    <link rel="stylesheet" href="/assets/san.css">
+    <!-- swiper link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- gsap cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+
+    <!-- swiper script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- main JS -->
+    <script src="/san2.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header__inner">
+            <div class="logo"><a href="#">logo</a></div>
+            <div class="header__menu">
+                <div class="menu__text">MENU</div>
+                <div class="menu__text">CLOSE</div>
+            </div>
+            <div class="header__shop-btn">
+                <a class="jt-btn__basic " href="https://www.sancmall.co.kr/" target="_blank" rel="noopener noreferrer">
+                    <span>쇼핑몰<span> 바로가기</span></span>
+                    <i class="jt-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M4,13.4L2.6,12l8.3-8.3l1.4,1.4L4,13.4z"></path>
+                            <path d="M13,11.9h-2V5H4.1V3H13V11.9z"></path>
+                        </svg>
+                    </i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main-wrapper">
+
+            <section class="visual-swiper">
+
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="img--block">
+                                <img src="/img/sancway-esg-visual-01.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img--block">
+                                <img src="/img/sancway-esg-visual-02.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="img--block">
+                                <img src="/img/sancway-esg-visual-03.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="visual-text--block">
+                    <h2>SANC ESG</h2>
+                    <p>건강한 미래를 위한 SANC의 약속</p>
+                </div>
+                <div class="scroll-down--btn">
+                    <span>Scroll Down</span>
+                    <i>
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M12,16c-0.3,0-0.5-0.1-0.7-0.3L4.6,9L6,7.6l6,6l6-6L19.4,9l-6.7,6.7C12.5,15.9,12.3,16,12,16z">
+                            </path>
+                        </svg>
+                    </i>
+                </div>
+            </section>
+
+
+            <section class="section-story">
+
+                <div class="inner">
+                    <div class="section-head">
+                        <h2>자연과 함께하는<br class="smbr"> SANC 이야기</h2>
+                        <p>
+                            SANC에는 약 11개의 저수지가 조성되어 있습니다.
+                            <br class="smbr">
+                            이 저수지들은 단순히 물을 저장하는 공간을 넘어,
+                            <br>자연과의 공존을 꿈꾸는 SANC의 철학을
+                            <br class="smbr">
+                            담고 있습니다.
+                        </p>
+                    </div>
+                    <div class="story-picture">
+                        <ul class="pic--list">
+                            <li>
+                                <img src="/img/sample.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="/img/sample.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="/img/sample.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="/img/sample.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="/img/sample.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="/img/sample.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="/img/sample.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="/img/sample.jpg" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <div class="story-rolling">
+                    <div class="rolling-bg"> </div>
+                    <div class="rolling-content">
+                        <div>
+                            <p>식품단지 내의 호수와 곳곳의 저수지는</p>
+                            <p>자연 생태계를 복원하고 생물 다양성을 지키기 위해 설계되었습니다.</p>
+                        </div>
+                        <div>
+                            <p>물안개가 피어오르는 호수는 단지 내 미기후를</p>
+                            <p>조절해 쾌적한 환경을 제공하며, 저수지 주변의 푸른 숲과</p>
+                            <p>조화롭게 어우러져 한 폭의 그림 같은 풍경을 선사합니다.</p>
+                        </div>
+                        <div>
+                            <p>SANC의 저수지와 호수는 지역 주민과 직원들에게</p>
+                            <p>휴식과 힐링의 공간으로 사랑받고 있습니다.</p>
+                            <p>또한, 자연과 함께 호흡하며 지속 가능한 미래를 만들어가는 SANC의</p>
+                            <p>이야기를 담은 상징적인 장소로 자리 잡고 있습니다.</p>
+                        </div>
+                        <div>
+                            <p>자연과 사람, 그리고 기업이 함께 어우러지는</p>
+                            <p>SANC의 모습은 환경을 존중하고 미래를 준비하는</p>
+                            <p>ESG 철학의 실천 그 자체입니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-value">
+                <div class="value-sticky--block">
+                    <div class="top-tx">
+                        <h2>자연과 공존하는<br class="smbr"> 지속 가능한 공간</h2>
+                        <ul>
+                            <li>환경보전</li>
+                            <li>사회적 가치 창출</li>
+                            <li>지속 가능 경영</li>
+                            <li>교육 및 홍보</li>
+                        </ul>
+                    </div>
+                    <div class="bot-tx">
+                        <ul class="bot-tx--list">
+                            <li>
+                                <h2>ECO-PRESERVATION</h2>
+                                <p>호수와 저수지는 자연 생태계 복원에 기여하며 지역 생물 다양성을 증진합니다. 단지 내 미기후를 조절하고 물 순환을 통해 지속 가능한 환경을 조성하며,
+                                    주민들에게 휴식과 교육의 장을 제공해 자연과의 공존을 체험할 기회를 만듭니다.
+                                </p>
+                            </li>
+                            <li>
+                                <h2>SOCIAL VALUE</h2>
+                                <p>직원과 지역 주민들에게 휴식과 여가를 즐길 수 있는 친환경 공간을 제공합니다. 이 공간은 스트레스 해소와 건강 증진에 도움을 주며, 지속 가능한 발전을
+                                    위한 역할도 합니다. 또한, 지역 커뮤니티와의 소통을 위한 친화적인 환경을 조성해 주민 간 교류와 협력을 촉진합니다.
+                                </p>
+                            </li>
+                            <li>
+                                <h2>ECO-MANAGEMENT</h2>
+                                <p>ESG 경영 철학에 따라 설계된 공간으로, 기업의 책임 경영을 실천합니다. 자원의 효율적 활용과 친환경 인프라 구축을 통해 미해 세대를 위한 지속
+                                    가능성을 확보합니다. 더불어 지역 사회와의 협력을 강화하여 모두가 함께 성장하는 환경을 조성합니다.
+                                </p>
+                            </li>
+                            <li>
+                                <h2>educate & promote</h2>
+                                <p>환경 보호와 지속 가능성의 중요성을 알리는 교육 및 체험 프로그램 운영 가능하며 ESG 가치를 널리 알릴 수 있는 대표 사례로 활용이 될 수 있습니다.
+                                    더불어 지역 사회와 기업이 함께 참여하는 협력 모델로 확장 가능합니다.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="value-img--block">
+                    <div class="img--block">
+                        <img src="/img/sancway-esg-value-01.png" alt="">
+                        <div>
+                            <h2>
+                                ECO-PRESERVATION
+                            </h2>
+                            <p>호수와 저수지는 자연 생태계 복원에 기여하며 지역 생물 다양성을 증진합니다. 단지 내 미기후를 조절하고 물 순환을 통해 지속 가능한 환경을 조성하며,
+                                주민들에게 휴식과 교육의 장을 제공해 자연과의 공존을 체험할 기회를 만듭니다.</p>
+                        </div>
+                    </div>
+                    <div class="img--block">
+                        <img src="/img/sancway-esg-value-02.webp" alt="">
+                        <div>
+                            <h2>SOCIAL VALUE</h2>
+                            <p>직원과 지역 주민들에게 휴식과 여가를 즐길 수 있는 친환경 공간을 제공합니다. 이 공간은 스트레스 해소와 건강 증진에 도움을 주며, 지속 가능한 발전을
+                                위한 역할도 합니다. 또한, 지역 커뮤니티와의 소통을 위한 친화적인 환경을 조성해 주민 간 교류와 협력을 촉진합니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="img--block">
+                        <img src="/img/sancway-esg-value-03.webp" alt="">
+                        <div>
+                            <h2>ECO-MANAGEMENT</h2>
+                            <p>ESG 경영 철학에 따라 설계된 공간으로, 기업의 책임 경영을 실천합니다. 자원의 효율적 활용과 친환경 인프라 구축을 통해 미해 세대를 위한 지속
+                                가능성을 확보합니다. 더불어 지역 사회와의 협력을 강화하여 모두가 함께 성장하는 환경을 조성합니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="img--block">
+                        <img src="/img/sancway-esg-value-04.webp" alt="">
+                        <div>
+                            <h2>educate & promote</h2>
+                            <p>환경 보호와 지속 가능성의 중요성을 알리는 교육 및 체험 프로그램 운영 가능하며 ESG 가치를 널리 알릴 수 있는 대표 사례로 활용이 될 수 있습니다.
+                                더불어 지역 사회와 기업이 함께 참여하는 협력 모델로 확장 가능합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <div class="separate--block">
+                <div class="separate--line">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <section class="section-environment">
+                <div class="section-head">
+                    <h2>우리 지구를 위한 <br class="smbr"> SANC의 노력과 <br>미래의 <br class="smbr">환경을 위한 실천</h2>
+                </div>
+                <div class="env--content">
+                    <ul class="env--list">
+                        <li>
+                            <div class="img--block">
+                                <div class="env-bg">
+                                    <img src="img/sancway-esg-environment-01.jpg" alt="">
+                                </div>
+                                <span class="env--typo">Yoghurt RUN 투명 페트</span>
+                            </div>
+                            <div class="env--content-tx">
+                                <div class="env--content-tx-box">
+                                    <h2>신앙촌식품, 탄소 절감을 위한 작은 혁신에서 ESG 경영으로</h2>
+                                </div>
+                                <div class="env--content-tx-box">
+                                    <p>신앙촌식품(주) 음료공장은 제품 생산의 시작부터 끝까지 환경을 생각합니다. 그 핵심에는 PET병의 직접 생산이 있습니다. 대부분의 기업은
+                                        PET병을 외부에서 구매하고 운송하지만, 신앙촌식품은 자체 생산을 통해 외부 구매비용과 물류비용을 줄이며 원가 경쟁력을 강화하고 있습니다.
+                                    </p>
+                                    <p>그러나 여기서 멈추지 않습니다. PET병의 직접 생산은 단순히 비용 절감에서 끝나는 것이 아니라, 물류 운송 과정에서 발생하는 탄소 배출을
+                                        획기적으로 줄이는 환경 보호 활동으로 이어집니다. PET병을 운송하지 않음으로써 연간 수많은 운송 차량에서 배출되는 이산화탄소를 없애고, 이는
+                                        곧 지속 가능한 경영으로 연결됩니다.</p>
+                                    <p>이처럼 신앙촌식품은 친환경 경영을 통해 기업의 사회적 책임을 실천하며, "지구를 위한 작은 변화가 큰 차이를 만든다"는 믿음으로 ESG 경영을
+                                        실현하고 있습니다. 앞으로도 환경과 미래를 생각하는 노력을 이어갈 것입니다.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img--block">
+                                <div class="env-bg">
+                                    <img src="img/sancway-esg-environment-01.jpg" alt="">
+                                </div>
+                                <span class="env--typo">Yoghurt RUN 투명 페트</span>
+                            </div>
+                            <div class="env--content-tx">
+                                <div class="env--content-tx-box">
+                                    <h2>신앙촌식품, 탄소 절감을 위한 작은 혁신에서 ESG 경영으로</h2>
+                                </div>
+                                <div class="env--content-tx-box">
+                                    <p>신앙촌식품(주) 음료공장은 제품 생산의 시작부터 끝까지 환경을 생각합니다. 그 핵심에는 PET병의 직접 생산이 있습니다. 대부분의 기업은
+                                        PET병을 외부에서 구매하고 운송하지만, 신앙촌식품은 자체 생산을 통해 외부 구매비용과 물류비용을 줄이며 원가 경쟁력을 강화하고 있습니다.
+                                    </p>
+                                    <p>그러나 여기서 멈추지 않습니다. PET병의 직접 생산은 단순히 비용 절감에서 끝나는 것이 아니라, 물류 운송 과정에서 발생하는 탄소 배출을
+                                        획기적으로 줄이는 환경 보호 활동으로 이어집니다. PET병을 운송하지 않음으로써 연간 수많은 운송 차량에서 배출되는 이산화탄소를 없애고, 이는
+                                        곧 지속 가능한 경영으로 연결됩니다.</p>
+                                    <p>이처럼 신앙촌식품은 친환경 경영을 통해 기업의 사회적 책임을 실천하며, "지구를 위한 작은 변화가 큰 차이를 만든다"는 믿음으로 ESG 경영을
+                                        실현하고 있습니다. 앞으로도 환경과 미래를 생각하는 노력을 이어갈 것입니다.</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="section-factory">
+                <div class="visual__header">
+                    <div class="wrap">
+                        <h1 class="visual__title">SANC, 탄소 없는 생산으로<br>환경을 지키는 기업</h1>
+                    </div>
+                </div>
+                <div class="fac-content">
+                    <div class="fac-box">
+                        <div class="desc-tx">
+                            <span class="i-desc">(</span>
+                            <span class="i-desc--word">탄소<br />절감</span>
+                            <span class="i-desc">)</span>
+                        </div>
+                    </div>
+                    <div class="fac-box">
+                        <div class="desc-tx">
+                            <span class="i-desc">(</span>
+                            <span class="i-desc--word">태양광</span>
+                            <span class="i-desc">)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="separate--block">
+                <div class="separate--line">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <section class="section-share">
+                <div class="visual__header">
+                    <div class="wrap">
+                        <h1 class="visual__title">나눔으로서 더 행복해지는 사회,<br>우리 사회와 구성원을 위한 가치있는 나눔</h1>
+                        <p>오랜 기간 나눔을 실천해온 사회적 기업</p>
+                    </div>
+                </div>
+                <ul class="share-content--list">
+                    <li>
+                        <a href="#">
+                            <div class="share-content--box">
+                                <h3>신앙촌 소비조합, 산불피해 성금 전달</h3>
+                                <p>최근 영남지역에 발생한 대형 산불로 큰 피해가 발생한 가운데, 신앙촌 소비조합이 복구 지원을 위해 사랑의 열매에 1억 5천만 원을 전달했다</p>
+                                <p>신앙신보 제2651호 2025-04-27</p>
+                            </div>
+                            <div class="share-content--img">
+                                <img src="/img/sancway-esg-share-05.jpg" alt="">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="share-content--box">
+                                <h3>신앙촌 소비조합, 산불피해 성금 전달</h3>
+                                <p>최근 영남지역에 발생한 대형 산불로 큰 피해가 발생한 가운데, 신앙촌 소비조합이 복구 지원을 위해 사랑의 열매에 1억 5천만 원을 전달했다</p>
+                                <p>신앙신보 제2651호 2025-04-27</p>
+                            </div>
+                            <div class="share-content--img">
+                                <img src="/img/sancway-esg-share-05.jpg" alt="">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="share-content--box">
+                                <h3>신앙촌 소비조합, 산불피해 성금 전달</h3>
+                                <p>최근 영남지역에 발생한 대형 산불로 큰 피해가 발생한 가운데, 신앙촌 소비조합이 복구 지원을 위해 사랑의 열매에 1억 5천만 원을 전달했다</p>
+                                <p>신앙신보 제2651호 2025-04-27</p>
+                            </div>
+                            <div class="share-content--img">
+                                <img src="/img/sancway-esg-share-05.jpg" alt="">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="share-content--box">
+                                <h3>신앙촌 소비조합, 산불피해 성금 전달</h3>
+                                <p>최근 영남지역에 발생한 대형 산불로 큰 피해가 발생한 가운데, 신앙촌 소비조합이 복구 지원을 위해 사랑의 열매에 1억 5천만 원을 전달했다</p>
+                                <p>신앙신보 제2651호 2025-04-27</p>
+                            </div>
+                            <div class="share-content--img">
+                                <img src="/img/sancway-esg-share-05.jpg" alt="">
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section-promise">
+                <div class="promise-bg">
+                    <img src="img/sancway-esg-promise.jpg" alt="">
+                </div>
+                <div class="promise-content">
+                    <h3>앞으로도 SANC는 지속적인 미래를 위한 약속을 준수합니다.<br>우리의 제품은 건강과 행복을 바라는 마음에 있습니다.</h3>
+                </div>
+            </section>
+
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__content">
+
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
