@@ -220,30 +220,57 @@ document.addEventListener("DOMContentLoaded", () => {
         // 모든 디바이스 공통
         "all": function () {
             const header = document.querySelector(".header");
+            const headerLogo = document.querySelector(".header__inner .logo");
+            const headerMenu = document.querySelector(".header__inner .header__menu .menu__text");
+            const headerMenuLine = document.querySelectorAll(".header__inner .header__menu .menu-icon .menu-icon--line");
+            const headerShopBtn = document.querySelector(".header__inner .header__shop-btn");
 
-            let lastScroll = 0; // 이전 스크롤 위치 저장
+            let lastScroll = 0;
 
             ScrollTrigger.create({
                 start: 0,
                 end: document.body.scrollHeight,
                 onUpdate: (self) => {
-                    const currentScroll = self.scroll(); // 현재 스크롤 위치
+                    const currentScroll = self.scroll();
 
+                    // 👇 스크롤을 아래로 내리면 헤더 숨김
                     if (currentScroll > lastScroll && currentScroll > 100) {
-                        // 👇 스크롤을 아래로 내리면 헤더 숨김
                         gsap.to(header, { y: -header.offsetHeight, duration: 0.3, ease: "power2.out" });
-                    } else {
-                        // 👆 스크롤을 올리면 헤더 보이기
-                        gsap.to(header, { y: 0, duration: 0.3, ease: "power2.out", backgroundColor:"#fff" });
                     }
-                    // ✅ 스크롤이 맨 위일 때 애니메이션
+                    // 👆 스크롤을 올리면 헤더 보이기
+                    else {
+                        gsap.to(header, { y: 0, duration: 0.3, ease: "power2.out" });
+                    }
+
+                    // ✅ 스크롤이 맨 위일 때
                     if (currentScroll === 0) {
-                        gsap.fromTo(
-                            header,
-                            { background: "#fff",  }, // 시작 상태
-                            { backgroundColor: "transparent", y: 0, duration: 0.5, ease: "power2.out",border:"none" } // 끝 상태
-                        );
+                        header.classList.add('active');
+                        headerLogo.classList.add('active');
+                        headerMenu.classList.add('active');
+                        headerMenuLine.forEach(line => line.classList.add('active'));
+
+                        gsap.to(header, {
+                            backgroundColor: "transparent",
+                            y: 0,
+                            duration: 0.5,
+                            ease: "power2.out",
+                            border : "none"
+                        });
                     }
+                    // ❌ 스크롤이 맨 위가 아닐 때
+                    else {
+                        header.classList.remove('active');
+                        headerLogo.classList.remove('active');
+                        headerMenu.classList.remove('active');
+                        headerMenuLine.forEach(line => line.classList.remove('active'));
+
+                        gsap.to(header, {
+                            backgroundColor: "#fff",
+                            duration: 0.3,
+                            ease: "power2.out",
+                        });
+                    }
+
                     lastScroll = currentScroll;
                 }
             });

@@ -21,11 +21,15 @@
     padding: 1rem 4rem;
 }
 
-.header__inner .logo {}
+.header__inner .logo {
+}
 
-.header__inner .logo a svg{
+.header__inner .logo.active a svg{
+    transition: all .4s ease;
+
     fill: #fff;
 }
+
 
 .header__inner .header__menu {
     position: absolute;
@@ -43,8 +47,11 @@
 .header__inner .header__menu .menu__text {
     position: relative;
     width: 60px;
+    transition: all .4s ease;
 }
-
+.header__inner .header__menu .menu__text.active{
+    color: #fff;
+}
 .header__inner .header__menu .menu__text i {
     position: absolute;
     top: 50%;
@@ -70,13 +77,36 @@
     background: #000;
     transition: all .4s ease;
 }
-
+.header__inner .header__menu .menu-icon .menu-icon--line.active {
+    background: #fff;
+}
 .header__inner .header__shop-btn {
+    position: relative;
     display: flex;
     align-items: center;
+    padding: 0.5rem 2rem;
     gap: 6px;
     font-size: 14px;
+}
+.header__inner .header__shop-btn.active{
+    color: #fff;
+}
+.header__shop-btn::before,
+.header__shop-btn::after {
+    content: '';
+    display: block;     
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 50px;
+    top: 0;
+    left: 0;
+    border: 1px solid var(--color-black);
+}
 
+.header__shop-btn::before {
+    border-width: 0 0 2px 0;
+    clip-path: inset(2px 0px -2px 0px round 50px);
 }
 
 .menu-icon.active .menu-icon--line:nth-child(1) {
