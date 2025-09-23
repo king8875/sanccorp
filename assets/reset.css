@@ -1,11 +1,12 @@
 /* =========================================
    Base CSS (Reset + Typography)
    ========================================= */
+   @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
 
 /* ------------------------------
    Reset
    ------------------------------ */
-:root{
+:root {
     /* --wp--style--global--content-size: 760rem;
     --wp--style--global--wide-size: 1200rem;
     --wp--preset--spacing--jt-xxxsmall: 16rem;
@@ -56,26 +57,32 @@
     --color-point-02: #E7E0D7;
     --color-point-03: #D3CABE;
     --color-bg: #FBFBFB;
-    --font-primary: 'SUIT', sans-serif;
-    --font-secondary: 'GoldenBook', 'SUIT', sans-serif;
-    --font-third: 'Jua', sans-serif;
+    --font-primary: 'SUIT','Pretendard' sans-serif;
     --letter-spacing: 0em;
-    
-    --font-maintit : 6rem;
-    --font-tit : 3rem;
-    --font-tit-01 : 2rem;
-    --font-tit-02 : 1.4rem;
-    --font-subtit : 1rem;
+
+
+    --border-radius : 3rem;
+
+
+
+
+    --font-maintit: 5rem;
+    --font-maintit-01: 4rem;
+    --font-tit: 3rem;
+    --font-tit-01: 2rem;
+    --font-tit-02: 1.4rem;
+    --font-subtit: 1.2rem;
+    --font-subtit-01: 1rem;
 
     /* mobile */
-    --font-maintit-m : 4rem;
-    --font-tit-m : 2rem;
-    --font-tit-01-m : 2rem;
-    --font-tit-02-m : 1.4rem;
-    --font-subtit-m : 1rem;
+    --font-maintit-m: 4rem;
+    --font-tit-m: 2rem;
+    --font-tit-01-m: 3rem;
+    --font-tit-02-m: 1.4rem;
+    --font-subtit-m: 1.5rem;
 
 
-    --separate-mb : 6px;
+    --separate-mb: 6px;
 }
 
 *,
@@ -149,20 +156,33 @@ button {
     cursor: pointer;
 }
 
-/* html {
-    font-size: clamp(14px, 2.2vw, 22px);
-} */
+html {
+    font-size: 16px;
+}
 
 body {
     overflow-x: hidden;
     font-family: var(--font-primary);
     word-break: keep-all;
-    font-size: 16px;
     line-height: 1.4;
+    font-size: 1rem;
     color: var(--color-black);
     background: var(--color-bg);
+    transition: all .4s ease;
 }
 
+@media screen and (max-width:1024px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+/* 모바일 */
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 12px;
+    }
+}
 
 /* h1,
 h2,

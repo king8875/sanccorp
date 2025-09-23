@@ -1,6 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger, SplitText);
 
+    const menuIcon = document.querySelector('.menu-icon');
+
+    menuIcon.addEventListener('click', function () {
+        this.classList.toggle('active'); // active 클래스 토글
+    });
+
+    const footerMenu = document.querySelectorAll('.footer__main-menu .footer-main-menu > li > a');
+    footerMenu.forEach(menu => {
+        menu.addEventListener('mouseover', function () {
+            const currentSubMenu = this.parentElement.querySelector('.sub-menu');
+
+            this.classList.add('active');
+            if (currentSubMenu) {
+                currentSubMenu.classList.add('active');
+            }
+        });
+
+        menu.addEventListener('mouseleave', function () {
+            const currentSubMenu = this.parentElement.querySelector('.sub-menu');
+
+            this.classList.remove('active');
+            if (currentSubMenu) {
+                currentSubMenu.classList.remove('active');
+            }
+        });
+    });
+
 
 
     // fac circle
@@ -158,9 +185,6 @@ document.addEventListener("DOMContentLoaded", () => {
             factory.to(circle1, { xPercent: 45 });
             factory.to(circle2, { xPercent: -45 }, '<');
 
-
-
-
         },
 
         // 모바일 (1024px 이하)
@@ -195,7 +219,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // 모든 디바이스 공통
         "all": function () {
+            const header = document.querySelector(".header");
 
+            let lastScroll = 0; // 이전 스크롤 위치 저장
+
+            ScrollTrigger.create({
+                start: 0,
+                end: document.body.scrollHeight,
+                onUpdate: (self) => {
+                    const currentScroll = self.scroll(); // 현재 스크롤 위치
+
+                    if (currentScroll > lastScroll && currentScroll > 100) {
+                        // 👇 스크롤을 아래로 내리면 헤더 숨김
+                        gsap.to(header, { y: -header.offsetHeight, duration: 0.3, ease: "power2.out" });
+                    } else {
+                        // 👆 스크롤을 올리면 헤더 보이기
+                        gsap.to(header, { y: 0, duration: 0.3, ease: "power2.out", backgroundColor:"#fff" });
+                    }
+                    // ✅ 스크롤이 맨 위일 때 애니메이션
+                    if (currentScroll === 0) {
+                        gsap.fromTo(
+                            header,
+                            { background: "#fff",  }, // 시작 상태
+                            { backgroundColor: "transparent", y: 0, duration: 0.5, ease: "power2.out",border:"none" } // 끝 상태
+                        );
+                    }
+                    lastScroll = currentScroll;
+                }
+            });
 
             const visualH2 = document.querySelector('.visual-text--block h2');
             const visualP = document.querySelector('.visual-text--block p');

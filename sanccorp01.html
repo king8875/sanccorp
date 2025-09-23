@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/assets/reset.css">
     <link rel="stylesheet" href="/assets/layout.css">
     <link rel="stylesheet" href="/assets/san.css">
 
@@ -17,24 +16,39 @@
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <div class="header__inner">
-            <div class="logo"><a href="#">logo</a></div>
-            <div class="header__menu">
-                <div class="menu__text">MENU</div>
-                <div class="menu__text">CLOSE</div>
-            </div>
-            <div class="header__shop-btn">
-                <a class="jt-btn__basic " href="https://www.sancmall.co.kr/" target="_blank" rel="noopener noreferrer">
-                    <span>쇼핑몰<span> 바로가기</span></span>
-                    <i class="jt-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-                            <path d="M4,13.4L2.6,12l8.3-8.3l1.4,1.4L4,13.4z"></path>
-                            <path d="M13,11.9h-2V5H4.1V3H13V11.9z"></path>
-                        </svg>
-                    </i>
+            <div class="logo">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="32" viewBox="0 0 100 32">
+                        <path
+                            d="M20.4,22.4c-1.7,5.3-5.9,8.6-10.5,9-.2,0-.3-.2,0-.3h0c2.6-1.2,4.5-3.8,5.4-6.6,1.3-4.2.3-6.6-2.4-8.6-2.6-2.1-3.9-4.1-2.7-7.9C11.5,3.7,15.7.3,21.1.3s4.7.9,4.6,1.7c-.2,1.4-1,4.3-1.5,5.7-.1.4-1,.4-1,0,.4-3.3.1-6.2-2.6-6.2s-4.4,1.9-5.2,4.5c-1.1,3.3-.2,4.8,2,6.7,3,2.4,4.5,5.1,3,9.7ZM38.3.6c-.8,4.4-1.5,9-2.1,15.5-.6,6.2-1,11.3-1,15.4h-4.2c-.2,0,.1-1,.3-1.1,1,0,2-.5,2.1-1.3.6-3.1,1.2-6.4,1.3-8.9h-8.7c-1.4,2.3-3.4,6-4.5,8.4-.5,1.3.2,1.7,1.1,1.8.2,0-.1,1.1-.3,1.1-1.8,0-3.4-.1-5.4,0-.2,0,.1-1,.3-1.1.8,0,1.6-.4,2.3-1.4,2.3-3.3,5-7.8,8.1-13,3.2-5.2,5.6-9.2,7.7-13,.5-1,.3-1.6-1.8-1.6s0-1,.3-1h4.4v.2ZM36.3,4.3h-.2c-2.9,4.6-6.5,10.4-9.2,14.9h8.1c.4-4.7,1-10.3,1.3-14.9ZM57.2.5h-4.1c-.2,0-.6,1.1-.4,1.1,1.5,0,2,.3,1.7,1.6-.6,2.1-1.3,4.5-2.3,7.8h0l-2,6.1c-2.2,6.9-3.2,9.7-3.9,11.7-.5,1.2-1,1.4-2.5,1.6h0c-.7-.1-1.3-.5-1.3-1.2,0-3.3.4-8.1,1-14.7.5-5.9.9-9.3,1.3-12.9,0-.8,0-1.1-.7-1.1h-4.2c0,4.2-.2,8.6-1,15.3-.8,7-1.5,11.9-2.1,15.6h7c2-.2,3.7-.1,5.6-.1s.6-1,.3-1.1c-1.1-.1-2.1-.5-1.8-1.6.7-2.7,2.6-9.6,4.5-15.5l3.3-10.4c.6,3.2,1.5,7.1,2.5,12.8,1,5.9,1.8,11.8,2.3,15.4,0,.3.2.4.4.4h1.6c-1.2-4.3-2.3-9.4-3.3-16.3-1-5.2-1.6-10.4-2-14.7v.2ZM95.1.3c-7,0-14,6.1-17.1,15.7-3,9.5-1,15.8,6.7,15.8h0c3.8,0,5.6-1,6.1-2,.7-1.3,1.6-4.1,1.9-4.8,0-.3-.8-.3-.9,0-1.2,2.1-3.5,5.6-6.7,5.6s-4-7.5-1.7-14.5,6.7-14.4,10.8-14.4,2.8,4.3,2.8,6.4,1,.2,1,0c.4-1.4,1.4-4.5,1.6-5.6.3-1.2-1.2-2.1-4.6-2.1h0ZM13,24.9c1.2-3.8-.2-5.8-3-8-2.7-2.2-3.1-5.1-2-8.6,1.3-3.9,4.1-6.8,7-7.8.2,0,0-.3-.2-.2-2.9.6-6.8,3.4-8.3,8.3-1.2,3.7-.5,6.6,2.6,9.1,2.5,1.9,3.5,4.1,2.4,7.5s-3.5,5-6,5-3.1-2.9-2.9-5.6c0-.3-.9-.3-1,0-.5,1.6-1.1,4-1.2,5.2,0,.9,1.1,1.7,4,1.7h0c4,0,7.4-2.6,8.6-6.6ZM76.8,1.5c.3,0,.6-1.1.4-1.1h-5.4c-.2,0-.6,1.1-.4,1.1,1.1,0,2,.5,1.7,1.6-.6,2.4-2.3,8.4-3.2,11.2h0l-1.8,5.7c-.6-3.2-1.3-6.1-2-9.3-.7-4.1-1.2-7.3-1.6-9.5,0-.5-.3-.7-.8-.7h-4.9c.9,3.3,1.7,7.1,2.8,13.6,1,5.7,1.8,11.6,2.4,17.3h1.3l6.2-19.4c1-3,2.3-7,3.1-8.8.5-1.1,1.2-1.5,2.1-1.6h.1ZM75.5,15.9c2.7-8.3,8.1-13.8,12.8-15.2.2,0,0-.3-.3-.2-4.7.7-11.1,6.5-14,15.4-2.9,9-.6,14.3,3.5,15.4.2,0,.5,0,.4-.1-3.6-1.8-5-7-2.4-15.3Z">
+                        </path>
+                    </svg>
                 </a>
             </div>
+            <div class="header__menu">
+                <div class="header__menu--wrapper">
+                    <span class="menu__text">
+                        <i class="menu__text--menu">MENU</i>
+                        <i class="menu__text--close">CLOSE</i>
+                    </span>
+                    <div class="menu-icon">
+                        <span class="menu-icon--line"></span>
+                        <span class="menu-icon--line"></span>
+                        <span class="menu-icon--line"></span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="header__shop-btn">
+                <span>쇼핑몰 바로가기</span>
+                <i class="jt-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                        <path d="M4,13.4L2.6,12l8.3-8.3l1.4,1.4L4,13.4z"></path>
+                        <path d="M13,11.9h-2V5H4.1V3H13V11.9z"></path>
+                    </svg>
+                </i>
+            </a>
         </div>
     </header>
     <main>
@@ -53,7 +67,7 @@
 
                         <div class="v-box">
                             <div class="img--block"><img src="/img/company-introduce-experience.jpg" alt=""></div>
-                            <h3>Excellency Experience</h3>
+                            <h3>Excellency<br class="smbr"> Experience</h3>
                             <div class="desc-tx">
                                 <span class="i-desc">(</span>
                                 <span class="i-desc--word">좋은<br />재료</span>
@@ -140,35 +154,28 @@
                         <div class="tx--block">
                             <h3>SINCE 1957</h3>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate voluptatem possimus
-                                non, facilis dolorum modi quidem voluptas provident exercitationem iure dolor fugit
-                                illum sed fugiat soluta voluptatibus, rem, praesentium repellendus.
+                                신앙촌 기업은 1957년 소사신앙촌을 시작으로 현재 부산 기장 소재에 이르기까지 정직과 신용, 최고의 품질로 반세기를 지켜온 기업입니다. 신앙촌식품(주), 생명물식품(주), 신앙촌소비조합(주), 신앙촌에프앤디(주)에서 요구르트, 간장, 두부, 침구, 의류, 속옷에 이르기까지 다양한 제품을 생산하고 있습니다.
                             </p>
                         </div>
                     </li>
                     <li class="about--item">
                         <div class="img--block">
-                            <img src="/img/san-about_img.jpg" alt="">
+                            <img src="/img/company-introduce-list-02.jpg" alt="">
                         </div>
                         <div class="tx--block">
-                            <h3>SINCE 1957</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate voluptatem possimus
-                                non, facilis dolorum modi quidem voluptas provident exercitationem iure dolor fugit
-                                illum sed fugiat soluta voluptatibus, rem, praesentium repellendus.
-                            </p>
+                            <h3>신앙촌의 새 이름, SANC</h3>
+                            <p> 2024년 생명물간장의 미국 온라인 쇼핑 플랫폼 '아마존' 입점을 시작으로 북미 시장에 진출하게 되었습니다. 앞으로 글로벌 식품 회사로 도약하기 위한 첫 시작으로 2025년 공식적으로 사명을 신앙촌 기업에서 SANC Corp.로 변경하고, 브랜드 경쟁력 강화 및 해외 시장 판로를 확대해 나가려 합니다. </p>
+                            <p>반세기를 넘는 세월 동안 정직과 신용을 바탕으로 힘찬 도약을 거듭해 온 SANC. 오늘의 성장은 저희 제품에 대한 고객 여러분의 신회와 애정 어린 관심이 있었기에 가능했다는 사실을 잘 알고 있습니다. 이에 저희 SANC는 현실에 안주하지 않고 쉼 없는 연구 개발로 고객의 진정한 만족을 위해 한걸음 더 나아가겠습니다.</p>
                         </div>
                     </li>
                     <li class="about--item">
                         <div class="img--block">
-                            <img src="/img/san-about_img.jpg" alt="">
+                            <img src="/img/company-introduce-list-03.jpg" alt="">
                         </div>
                         <div class="tx--block">
-                            <h3>SINCE 1957</h3>
+                            <h3>SANC NOW</h3>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate voluptatem possimus
-                                non, facilis dolorum modi quidem voluptas provident exercitationem iure dolor fugit
-                                illum sed fugiat soluta voluptatibus, rem, praesentium repellendus.
+                                고객을 사랑하는 마음으로 좋은 제품을 생산하는 기업, 자연에 대한 사랑으로 환경을 보호하는 기업, 언제까지나 고객과 함께하는 성실하고 건실한 기업이 되도록 끊임없는 노력을 기울이겠습니다.
                             </p>
                         </div>
                     </li>
@@ -186,13 +193,13 @@
 
             <!-- about core -->
             <section class="about-core">
-                <!-- <div class="about-core--bg--item bg--door"></div> -->
-                <!-- <div class="about-core--bg--item bg--first"></div> -->
-                <!-- <div class="about-core--bg--item bg--second"></div> -->
+                <div class="about-core--bg--item bg--door"></div>
+                <div class="about-core--bg--item bg--first"></div>
+                <div class="about-core--bg--item bg--second"></div>
                 <div class="inner">
                     <div class="visual__header">
                         <div class="wrap">
-                            <h1 class="visual__title">SANC SANC</h1>
+                            <h1 class="visual__title">SANC CORE</h1>
                         </div>
 
                     </div>
@@ -266,6 +273,11 @@
                                     <br>
                                     끊임없는 투자와 노력은 신앙촌식품의 정성입니다.
                                 </p>
+                                <p>
+                                    고객의 건강을 추구하는 마음이 식품 과학과 만나는 곳.
+                                    <br>
+                                    신앙촌식품이 만드는 제품은 과학과 정성이 빚은 명품입니다.
+                                </p>
                             </div>
                         </div>
 
@@ -281,7 +293,7 @@
                                         Accusantium accusamus perferendis eum quo doloremque magnam, ratione saepe.</p>
                                 </div>
                                 <div class="more__link">
-                                    <a href="#">Lorem ipsum dolor sit.</a>
+                                    <a href="#">Discover More</a>
                                 </div>
                             </li>
                             <li class="food__item">
@@ -295,7 +307,7 @@
                                         Accusantium accusamus perferendis eum quo doloremque magnam, ratione saepe.</p>
                                 </div>
                                 <div class="more__link">
-                                    <a href="#">Lorem ipsum dolor sit.</a>
+                                    <a href="#">Discover More</a>
                                 </div>
                             </li>
                             <li class="food__item">
@@ -309,7 +321,7 @@
                                         Accusantium accusamus perferendis eum quo doloremque magnam, ratione saepe.</p>
                                 </div>
                                 <div class="more__link">
-                                    <a href="#">Lorem ipsum dolor sit.</a>
+                                    <a href="#">Discover More</a>
                                 </div>
                             </li>
                             <li class="food__item">
@@ -323,7 +335,7 @@
                                         Accusantium accusamus perferendis eum quo doloremque magnam, ratione saepe.</p>
                                 </div>
                                 <div class="more__link">
-                                    <a href="#">Lorem ipsum dolor sit.</a>
+                                    <a href="#">Discover More</a>
                                 </div>
                             </li>
                         </ul>
@@ -332,10 +344,18 @@
                     <div class="food__content v2">
                         <div class="food__header">
                             <div class="sticky">
-                                <h3 class="food-tit visual__title">Lorem, ipsum.</h3>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint eveniet porro
-                                    assumenda, rerum, aspernatur, nam veniam nesciunt omnis officia nostrum quas
-                                    sapiente delectus est nihil exercitationem similique culpa! Adipisci, cupiditate?
+                                <h3 class="food-tit visual__title">SANC Textile</h3>
+                                <p>
+                                    신앙촌 전통 수 이불, 밍크 담요, 엑슬란 내의, 홈드레스.
+                                    <br>
+                                    6~70년대 우리나라 가정에 신앙촌 제품 하나 없는 데는 없었을 것입니다.
+                                    전 국민의 애용품이었던 신앙촌 브랜드.
+                                    '나에게 가장 소중한 사람이 사용하는 제품' 이라는 생각으로 한 공정 한 공정마다
+                                    정성을 다하는 마음은 지금도 변함이 없습니다. 
+                                    그리고 변하지 않는 또 하나! 바로 고객 여러분의 사랑입니다.
+                                </p>
+                                <p>
+                                    70년 전 고객이 지금도 저희의 변함없는 고객이고 또 다음 세대에게도 그대로 이어져 저희들에 대한 사랑과 신회를 물려주시는 것. 이것은 저희들의 큰 자랑이자 기쁨입니다.
                                 </p>
                             </div>
                         </div>
@@ -417,26 +437,59 @@
                 <div class="footer__main-menu-container">
                     <nav class="footer__main-menu">
                         <ul class="footer-main-menu">
-                            <li>
+                            <li class="main-menu--item active">
                                 <a href="#"><span>COMPANY</span></a>
-                                <ul class="sub-menu active">
-                                    <li><a href="#">SANC 소개</a></li>
-                                    <li><a href="#">SANC 메시지</a></li>
-                                    <li><a href="#">SANC 연혁</a></li>
-                                    <li><a href="#">CI/BI</a></li>
-                                    <li><a href="#">판매처</a></li>
-                                    <li><a href="#">사업장</a></li>
+                                <ul class="sub-menu">
+                                    <li><a href="#">
+                                            <p>SANC 소개</p>
+                                        </a></li>
+                                    <li><a href="#">
+                                            <p>SANC 메시지</p>
+                                        </a></li>
+                                    <li><a href="#">
+                                            <p>SANC 연혁</p>
+                                        </a></li>
+                                    <li><a href="#">
+                                            <p>CI/BI</p>
+                                        </a></li>
+                                    <li><a href="#">
+                                            <p>판매처</p>
+                                        </a></li>
+                                    <li><a href="#">
+                                            <p>사업장</p>
+                                        </a></li>
                                 </ul>
                             </li>
-                            <li>
+                            <li class="main-menu--item">
                                 <a href="#"><span>SANC Way</span></a>
                                 <ul class="sub-menu">
                                     <li><a href="#">SANC 소개</a></li>
                                     <li><a href="#">SANC 소개</a></li>
                                 </ul>
                             </li>
-                            <li>
+                            <li class="main-menu--item">
                                 <a href="#"><span>BRAND</span></a>
+                                <ul class="sub-menu">
+                                    <li><a href="#">SANC 소개</a></li>
+                                    <li><a href="#">SANC 소개</a></li>
+                                </ul>
+                            </li>
+                            <li class="main-menu--item">
+                                <a href="#"><span>BRAND eX</span></a>
+                                <ul class="sub-menu">
+                                    <li><a href="#">SANC 소개</a></li>
+                                    <li><a href="#">SANC 소개</a></li>
+                                </ul>
+                            </li>
+                            <li class="main-menu--item">
+                                <a href="#"><span>SANC Now</span></a>
+                                <ul class="sub-menu">
+                                    <li><a href="#">SANC 소개</a></li>
+                                    <li><a href="#">SANC 소개</a></li>
+                                </ul>
+                            </li>
+                            <li class="main-menu--item">
+                                <a href="#"><span>SNS</span></a>
                                 <ul class="sub-menu">
                                     <li><a href="#">SANC 소개</a></li>
                                     <li><a href="#">SANC 소개</a></li>

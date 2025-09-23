@@ -1,5 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  const menuIcon = document.querySelector('.menu-icon');
+
+  menuIcon.addEventListener('click', function () {
+    this.classList.toggle('active'); // active 클래스 토글
+  });
+
+  const footerMenu = document.querySelectorAll('.footer__main-menu .footer-main-menu > li > a');
+  footerMenu.forEach(menu => {
+    menu.addEventListener('mouseover', function () {
+      const currentSubMenu = this.parentElement.querySelector('.sub-menu');
+
+      this.classList.add('active');
+      if (currentSubMenu) {
+        currentSubMenu.classList.add('active');
+      }
+    });
+
+    menu.addEventListener('mouseleave', function () {
+      const currentSubMenu = this.parentElement.querySelector('.sub-menu');
+
+      this.classList.remove('active');
+      if (currentSubMenu) {
+        currentSubMenu.classList.remove('active');
+      }
+    });
+  });
+
+
   //visual01 gsap
   const VboxWrapper = document.querySelector('.wrap-wide.v1 .v-box__wrapper');
   const V1box01 = document.querySelector('.wrap-wide.v1 .v-box:nth-child(1)');
@@ -221,7 +249,6 @@ document.addEventListener("DOMContentLoaded", () => {
   ScrollTrigger.matchMedia({
     // PC (데스크탑)
     "(min-width: 1025px)": function () {
-
       // intro
       const intro = gsap.timeline({
         scrollTrigger: {
@@ -242,6 +269,7 @@ document.addEventListener("DOMContentLoaded", () => {
       intro.to(VboxWrapper, { gap: "50px", }, '<');
       intro.to(descTxV1, { autoAlpha: 1, gap: "100px" });
       intro.to(descWordV1, { autoAlpha: 1 }, "<");
+
 
       // intro2
       const introv2 = gsap.timeline({
@@ -280,8 +308,81 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
     // 모바일 (1024px 이하)
-    "(max-width: 1024px)": function () {
+    "(min-width: 768px) and (max-width: 1024px)": function () {
 
+      // introv1
+      const intro = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".wrap-wide.v1",
+          start: "0% 0%",
+          end: "100% 100%",
+          scrub: 1,
+        },
+      });
+      intro.to(V1boxTx, {
+        y: 40,
+        autoAlpha: 0,
+        duration: 0.4,
+        delay: 0.2
+      });
+      intro.to(V1box01, { width: "50%", });
+      intro.to(V1box02, { width: "50%", }, '<');
+      intro.to(VboxWrapper, { gap: "50px", }, '<');
+      intro.to(descTxV1, { autoAlpha: 1, gap: "100px" });
+      intro.to(descWordV1, { autoAlpha: 1 }, "<");
+
+
+      // introv2
+      gsap.set(V2box02, { height: 0, width: "100%" });
+
+      const introv2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".wrap-wide.v2",
+          start: "0% 0%",
+          end: "100% 100%",
+          scrub: 1,
+        },
+      });
+      introv2.to(V2boxTx, {
+        y: 40,
+        autoAlpha: 0,
+        duration: 0.4,
+        delay: 0.2
+      });
+      introv2.to(V2box01, { height: "50%", });
+      introv2.to(V2box02, { height: "50%", }, '<');
+      introv2.to(VboxWrapper02, { gap: "50px", }, '<');
+      introv2.to(descTxV2, { autoAlpha: 1, gap: "100px" });
+      introv2.to(descWordV2, { autoAlpha: 1 }, "<");
+
+      // circle
+      const circle1 = document.querySelector('.fac-content .fac-box:nth-child(1)');
+      const circle2 = document.querySelector('.fac-content .fac-box:nth-child(2)');
+
+      gsap.set(circle1, { autoAlpha: 0, yPercent: 40 });
+      gsap.set(circle2, { autoAlpha: 0, yPercent: 100 });
+      const factory = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".section-factory",
+          start: "0% 50%",
+          end: "100% 50%",
+        },
+      });
+
+      factory.to(circle1, {
+        autoAlpha: 1,
+        yPercent: 0
+      });
+
+      factory.to(circle2, {
+        autoAlpha: 1,
+        yPercent: 90
+      });
+
+    },
+
+    // mobile
+    "(max-width: 767px)": function () {
       gsap.set(V1box02, { height: 0, width: "100%" });
 
       const intro = gsap.timeline({
@@ -306,6 +407,9 @@ document.addEventListener("DOMContentLoaded", () => {
       intro.to(descWordV1, { autoAlpha: 1 }, "<");
 
 
+
+
+      // introv2
       gsap.set(V2box02, { height: 0, width: "100%" });
 
       const introv2 = gsap.timeline({
@@ -328,7 +432,7 @@ document.addEventListener("DOMContentLoaded", () => {
       introv2.to(descTxV2, { autoAlpha: 1, gap: "100px" });
       introv2.to(descWordV2, { autoAlpha: 1 }, "<");
 
-
+      // circle
       const circle1 = document.querySelector('.fac-content .fac-box:nth-child(1)');
       const circle2 = document.querySelector('.fac-content .fac-box:nth-child(2)');
 
@@ -351,18 +455,33 @@ document.addEventListener("DOMContentLoaded", () => {
         autoAlpha: 1,
         yPercent: 90
       });
-
-
-
-
-
-
-
     },
 
     // 모든 디바이스 공통
     "all": function () {
 
+
+      const header = document.querySelector(".header");
+
+      let lastScroll = 0; // 이전 스크롤 위치 저장
+
+      ScrollTrigger.create({
+        start: 0,
+        end: document.body.scrollHeight,
+        onUpdate: (self) => {
+          const currentScroll = self.scroll(); // 현재 스크롤 위치
+
+          if (currentScroll > lastScroll && currentScroll > 100) {
+            // 👇 스크롤을 아래로 내리면 헤더 숨김
+            gsap.to(header, { y: -header.offsetHeight, duration: 0.3, ease: "power2.out" });
+          } else {
+            // 👆 스크롤을 올리면 헤더 보이기
+            gsap.to(header, { y: 0, duration: 0.3, ease: "power2.out" });
+          }
+
+          lastScroll = currentScroll;
+        }
+      });
 
       const visualH2 = document.querySelector('.visual-text--block h2');
       const visualP = document.querySelector('.visual-text--block p');
@@ -389,7 +508,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    
+
 
 
       // // 각 div 안의 <p>들을 split
@@ -440,6 +559,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
   });
+
+
+
+
 
 });
 
