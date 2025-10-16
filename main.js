@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger, Flip);
 
   const menuIcon = document.querySelector('.menu-icon');
 
@@ -53,6 +54,84 @@ document.addEventListener("DOMContentLoaded", () => {
 
   gsap.set(V2boxTx, { xPercent: -50, yPercent: -50 });
   gsap.set(descTxV2, { autoAlpha: 0 });
+
+  //visual03 gsap
+  // const VboxWrapper03 = document.querySelector('.wrap-wide.v3 .v-box__wrapper');
+  // const V3box01 = document.querySelector('.wrap-wide.v3 .v-box:nth-child(1)');
+  // const V3box02 = document.querySelector('.wrap-wide.v3 .v-box:nth-child(2)');
+  // const V3boxTx = document.querySelector('.wrap-wide.v3 .v-box h3');
+
+  // const descTxV3 = document.querySelectorAll('.wrap-wide.v3 .desc-tx');
+  // const descWordV3 = document.querySelector('.wrap-wide.v3 .i-desc--word');
+
+  // gsap.set(V3boxTx, { xPercent: -50, yPercent: -50 });
+  // gsap.set(descTxV3, { autoAlpha: 0 });
+
+
+
+
+
+  const VboxWrapper03 = document.querySelector(".wrap-wide.v3 .v-box__wrapper");
+  const V3boxes = document.querySelectorAll(".wrap-wide.v3 .v-box");
+  const V3boxTx = document.querySelectorAll(".wrap-wide.v3 h3");
+  const descTxV3 = document.querySelectorAll(".wrap-wide.v3 .desc-tx");
+  const descWordV3 = document.querySelectorAll(".wrap-wide.v3 .i-desc--word");
+
+  gsap.set(V3boxTx, { xPercent: -50, yPercent: -50 });
+  gsap.set(descTxV3, { autoAlpha: 0 });
+
+  // 기존 Timeline
+  const introv3 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".wrap-wide.v3",
+      start: "0% 0%",
+      end: "100% 100%",
+      scrub: 1,
+    },
+  });
+
+  introv3.to(V3boxTx, { y: 40, autoAlpha: 0, duration: 0.4, delay: 0.2 });
+  introv3.to(V3boxes[0], { width: "50%" });
+  introv3.to(V3boxes[1], { width: "50%" }, '<');
+  introv3.to(VboxWrapper03, { gap: "50px" }, '<');
+  introv3.to(descTxV3, { autoAlpha: 1, gap: "100px" });
+  introv3.to(descWordV3, { autoAlpha: 1 }, "<");
+  introv3.to(descTxV3, { autoAlpha: 0 });
+  introv3.to(VboxWrapper03, {scale:0.5})
+  // -------------------------
+  // FLIP으로 2개 → 12개 박스 분할
+  // introv3.call(() => {
+  //   const state = Flip.getState(".wrap-wide.v3 .v-box");
+
+  //   const wrapper = VboxWrapper03;
+  //   const currentCount = wrapper.querySelectorAll(".v-box").length;
+
+  //   for (let i = currentCount + 1; i <= 12; i++) {
+  //     const box = document.createElement("div");
+  //     box.classList.add("v-box");
+  //     box.innerHTML = `
+  //       <div class="img--block"><img src="./img/company-introduce-trustful.jpg" alt=""></div>
+  //       <h3>Sincere Trustful</h3>
+  //       <div class="desc-tx">
+  //         <span class="i-desc">(</span>
+  //         <span class="i-desc--word">좋은<br>재료</span>
+  //         <span class="i-desc">)</span>
+  //       </div>
+  //     `;
+  //     box.style.opacity = 0;
+  //     wrapper.appendChild(box);
+  //   }
+
+  //   const newBoxes = wrapper.querySelectorAll(".v-box");
+  //   newBoxes.forEach(box => box.style.opacity = 1);
+
+  //   Flip.from(state, {
+  //     duration: 1,
+  //     ease: "power1.inOut",
+  //     absolute: true
+  //   });
+  // });
+
 
 
 
@@ -144,108 +223,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
-  // let rollingItems = [];
-  // let splits = []; // SplitText 인스턴스 저장용
-
-  // function initRollingAnimation() {
-  //   // 기존 애니메이션 제거
-  //   ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-  //   splits.forEach(split => split.revert()); // SplitText 되돌리기
-  //   splits = [];
-
-  //   rollingItems = gsap.utils.toArray(".rolling-content div");
-
-  //   rollingItems.forEach((item) => {
-  //     // SplitText 생성
-  //     const split = SplitText.create(item.querySelectorAll("p"), {
-  //       type: "lines",
-  //       linesClass: "split-line"
-  //     });
-  //     splits.push(split);
-
-  //     // 등장 애니메이션
-  //     gsap.fromTo(
-  //       split.lines,
-  //       {
-  //         opacity: 0,
-  //         y: 30
-  //       },
-  //       {
-  //         opacity: 1,
-  //         y: 0,
-  //         stagger: 0.1,
-  //         duration: 1.5,
-  //         scrollTrigger: {
-  //           trigger: item,
-  //           start: "top 80%",
-  //           end: "bottom 40%",
-  //           scrub: true
-  //         },
-  //         onComplete: () => {
-  //           // 중앙 지나면서 다시 사라짐
-  //           gsap.to(split.lines, {
-  //             opacity: 0,
-  //             stagger: 0.1,
-  //             duration: 1.5,
-  //             scrollTrigger: {
-  //               trigger: item,
-  //               start: "center center",
-  //               end: "bottom top",
-  //               scrub: true
-  //             }
-  //           });
-  //         }
-  //       }
-  //     );
-  //   });
-
-  //   ScrollTrigger.refresh(); // 새로 등록한 트리거 갱신
-  // }
-
-  // 최초 실행
-
-  // 브라우저 리사이즈 시 다시 초기화
-
-
-
-  // introv3.to(VboxWrapper03, {
-  //   scale: 0.4,
-  //   duration: 1,
-  //   ease: "power3.inOut"
-  // });
-
-
-  // const carousel = document.querySelector(".carousel");
-  // const slides = document.querySelectorAll(".slide");
-  // const prevBtn = document.querySelector(".prev");
-  // const nextBtn = document.querySelector(".next");
-
-  // let index = 0;
-
-  // function updateCarousel() {
-  //   const slideWidth = slides[0].offsetWidth;
-  //   carousel.scrollTo({
-  //     left: slideWidth * index,
-  //     behavior: "smooth"
-  //   });
-  // }
-
-  // nextBtn.addEventListener("click", () => {
-  //   if (index < slides.length - 1) {
-  //     index++;
-  //     updateCarousel();
-  //   }
-  // });
-
-  // prevBtn.addEventListener("click", () => {
-  //   if (index > 0) {
-  //     index--;
-  //     updateCarousel();
-  //   }
-  // });
-
   ScrollTrigger.matchMedia({
     // PC (데스크탑)
     "(min-width: 1025px)": function () {
@@ -269,6 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
       intro.to(VboxWrapper, { gap: "50px", }, '<');
       intro.to(descTxV1, { autoAlpha: 1, gap: "100px" });
       intro.to(descWordV1, { autoAlpha: 1 }, "<");
+      intro.to(descTxV1, { autoAlpha: 0 });
 
 
       // intro2
@@ -291,6 +269,27 @@ document.addEventListener("DOMContentLoaded", () => {
       introv2.to(VboxWrapper02, { gap: "50px", }, '<');
       introv2.to(descTxV2, { autoAlpha: 1, gap: "100px" });
       introv2.to(descWordV2, { autoAlpha: 1 }, "<");
+      introv2.to(descTxV2, { autoAlpha: 0 });
+      // intro3
+      // const introv3 = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: ".wrap-wide.v3",
+      //     start: "0% 0%",
+      //     end: "100% 100%",
+      //     scrub: 1,
+      //   },
+      // });
+      // introv3.to(V3boxTx, {
+      //   y: 40,
+      //   autoAlpha: 0,
+      //   duration: 0.4,
+      //   delay: 0.2
+      // });
+      // introv3.to(V3box01, { width: "50%", });
+      // introv3.to(V3box02, { width: "50%", }, '<');
+      // introv3.to(VboxWrapper03, { gap: "50px", }, '<');
+      // introv3.to(descTxV3, { autoAlpha: 1, gap: "100px" });
+      // introv3.to(descWordV3, { autoAlpha: 1 }, "<");
 
       // factory
       const factory = gsap.timeline({

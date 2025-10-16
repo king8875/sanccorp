@@ -322,7 +322,7 @@ canvas {
 @media screen and (max-width:992px) {}
 
 @media screen and (max-width:690px) {
-    .business1 .bus_lst1 ul li{
+    .business1 .bus_lst1 ul li {
         max-width: 100%;
     }
 }
@@ -462,11 +462,13 @@ canvas {
     font-size: 14px;
     font-weight: 300;
     color: #666;
-    margin-inline-start:0px;
+    margin-inline-start: 0px;
 }
-.business1 .bus_lst1 ul li::marker{
+
+.business1 .bus_lst1 ul li::marker {
     content: "";
 }
+
 .business1 .left .txt_box2 {
     width: 100%;
     border: 2px dashed #ddd;
@@ -484,3 +486,7 @@ canvas {
     padding-left: 10px;
     margin-bottom: 10px;
 }
+
+
+
+
