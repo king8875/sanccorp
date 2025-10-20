@@ -26,16 +26,24 @@
     src: url('../assets/fonts/SUIT-Bold.woff2') format('woff2'), 
 }
 
-
-
 /* ************************************** *
- * Jua
+ * Toss
  * ************************************** */  
-@font-face {
-    font-family: 'Jua';
-    font-weight: 400;
-    src: url('../fonts/BM/BM-Jua.woff') format('woff');
+ @font-face {
+    font-family: 'toss';
+    font-weight: 500;
+    src: url('../assets/fonts/Moneygraphy-Rounded.woff2') format('woff2'), 
 }
+
+@font-face {
+    font-family: 'toss';
+    font-weight: 700;
+    src: url('../assets/fonts/Moneygraphy-Pixel.woff2') format('woff2'), 
+}
+
+
+
+
 /* pretendard */
 
 @font-face {
